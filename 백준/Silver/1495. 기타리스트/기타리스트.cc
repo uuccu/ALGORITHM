@@ -13,7 +13,7 @@ vector<int> v;
 int dp[51][1001] = {-1,};//
 
 int recursive(int step, int cur_volume) {
-    if (cur_volume > m || cur_volume < 0)return -999999999;// 이런경우 -1이 되어야함
+    if (cur_volume > m || cur_volume < 0)return -2;//???
     if (step == n)return dp[step][cur_volume] = cur_volume;// base case
     if (dp[step][cur_volume] != -1) {
         return dp[step][cur_volume];
@@ -36,7 +36,7 @@ int main() {
         v.push_back(x);
     }
     dp[0][s] = recursive(0, s);
-    if(dp[0][s] == -999999999)cout<<-1;
+    if(dp[0][s] == -2)cout<<-1;
     else
         cout << dp[0][s];
 }
