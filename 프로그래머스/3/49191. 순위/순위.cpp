@@ -62,17 +62,14 @@ int solution(int n, vector<vector<int>> results) {
         int cnt = 0;
         memset(win_visited,false,sizeof(win_visited));
         memset(defeat_visited,false,sizeof(defeat_visited));
-            win_visited[i] = true;
-            cnt += win_recursive(i);
-
+        win_visited[i] = true;
+        cnt += win_recursive(i);
         cout << cnt << " ";
-            defeat_visited[i] = true;
-            cnt += defeat_recursive(i);
-
+        defeat_visited[i] = true;
+        cnt += defeat_recursive(i);
         cout << cnt << endl;
-        if (cnt == n - 1) {
+        if (cnt == n - 1)
             answer++;
-        }
     }
 
 
